@@ -1,14 +1,18 @@
 import React from 'react';
-import Logo from "./Logo";
+import LogoFooter from "./LogoFooter";
 
 function Footer() {
-  //JSX
-  return (
-    <footer>
-      <Logo/>
-    Footer
-    </footer>
-  );
+    //JSX
+    return (
+        <footer>
+
+            <div className="container">
+                <LogoFooter/>
+
+                            Footer
+            </div>
+        </footer>
+    );
 }
 
 export default Footer;

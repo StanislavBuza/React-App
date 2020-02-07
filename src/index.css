@@ -1,10 +1,14 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.App-logo {
+
 }
 
 header {
@@ -16,5 +20,74 @@ footer {
 }
 
 .logo {
-  background-color: yellow;
+  display: inline-block;
+  padding: 15px;
+  height: 7vmin;
+  pointer-events: none;
+}
+.logo-footer {
+  display: inline-block;
+  padding: 15px;
+  height: 7vmin;
+  pointer-events: none;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+header nav {
+  display: inline-block;
+  margin-left: 50px;
+}
+
+header nav ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+header nav li {
+  float: left;
+  margin-right: 31px;
+}
+
+main {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo-footer {
+    animation: logo-footer-spin infinite 10s linear;
+  }
+}
+
+
+
+@keyframes logo-footer-spin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
 }
