@@ -1,15 +1,19 @@
 import React from 'react';
-import Logo from "./Logo";
+import Logo from "../Logo";
 import Menu from "./Menu";
 
-function Header() {
+function Header(props) {
+
+
+
+
     //JSX
     return (
         <header>
             <div className="container">
 
                 <Logo className='logo-header'/>
-                <Menu/>
+                <Menu menuItems={props.menuItems}/>
             </div>
 
         </header>

@@ -1,15 +1,16 @@
 import React from 'react';
 import MenuItem from "./MenuItem";
 
-function Menu() {
+
+function Menu(props) {
+
+
+
     //JSX
     return (
         <nav>
             <ul>
-                <MenuItem/>
-                <MenuItem/>
-                <MenuItem/>
-                <MenuItem/>
+                {props.menuItems.map(el => <MenuItem key={el.text} menuItems={el} />)}
             </ul>
         </nav>
     );

@@ -7,15 +7,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.App-logo {
-
-}
 
 header {
   background-color: aqua;
 }
 
 footer {
+  margin: 0;
+  list-style-type: none;
   background-color: aquamarine;
 }
 
@@ -25,12 +24,7 @@ footer {
   height: 7vmin;
   pointer-events: none;
 }
-.logo-footer {
-  display: inline-block;
-  padding: 15px;
-  height: 7vmin;
-  pointer-events: none;
-}
+
 
 .container {
   width: 960px;
@@ -43,7 +37,7 @@ header nav {
 }
 
 header nav ul {
-  padding: 0;
+  padding: 50px;
   margin: 0;
   list-style-type: none;
 }
@@ -56,6 +50,11 @@ header nav li {
 main {
   padding-top: 50px;
   padding-bottom: 50px;
+}
+
+.footer-menus {
+  display: inline-block;
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -75,19 +74,3 @@ main {
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .logo-footer {
-    animation: logo-footer-spin infinite 10s linear;
-  }
-}
-
-
-
-@keyframes logo-footer-spin {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
