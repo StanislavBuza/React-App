@@ -12,7 +12,7 @@ function Header(props) {
         <header>
             <div className="container">
 
-                <Logo className='logo-header'/>
+                <Logo className='logo'/>
                 <Menu menuItems={props.menuItems}/>
             </div>
 
