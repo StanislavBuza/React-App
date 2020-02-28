@@ -4,6 +4,8 @@ import Footer from "./components/Footer";
 import Content from "./components/Content";
 import Counter from "./components/Counter";
 import AddCounterForm from "./components/AddCounterForm";
+import ConfirmationDelete from "./components/ConfirmationDelete";
+
 
 const items = {
     headerMenu: [{
@@ -55,6 +57,8 @@ function App() {
     };
 
     const [counters, setCounters] = useState(initialCounters)
+    const [confirmCounter, setConfirmCounter] = useState({})
+
 
     const resetTotalCount = () => {
         const newCounters = counters.map(el => ({...el, count: 0}));
@@ -69,15 +73,25 @@ function App() {
     }
     const decrementCounter = (id) => {
         const newCounters = counters.map(el => {
-            if (el.id === id) return {...el, count: el.count - 1}
+            if (el.id === id) return {...el, count: el.count - 1};
             return el;
         });
         setCounters(newCounters);
     }
 
-    const removeCounter = (id) => {
-        const newCounters = counters.filter(el => el.id !== id);
+    const confirmRemoveCounter = (counter) => {
+        setConfirmCounter(counter);
+
+    }
+
+    const removeConfirmed = (id) => {
+        const newCounters = counters.filter(el => el.id !== confirmCounter.id);
         setCounters(newCounters);
+        setConfirmCounter({});
+    }
+
+    const confirmDeleteCancel = (id) => {
+        setConfirmCounter({})
     }
 
     const addCounter = (name, count) => {
@@ -88,6 +102,8 @@ function App() {
         }];
         setCounters(newCounters);
     }
+
+
 
     return (
         <div className="container">
@@ -101,22 +117,26 @@ function App() {
 
             {
                 counters.map(el => <Counter key={el.id}
-                                            name={el.name}
-                                            id={el.id}
-                                            count={el.count}
+                                            counter={el}
                                             increment={incrementCounter}
                                             decrement={decrementCounter}
-                                            remove={removeCounter}
+                                            remove={confirmRemoveCounter}
 
                 />)
             }
             <hr/>
             <AddCounterForm onSubmit={addCounter}/>
             <hr/>
+
+            <ConfirmationDelete
+            name={confirmCounter.name}
+            onScuccess={removeConfirmed}
+            onCancel={confirmDeleteCancel}
+            />
+
             <Footer menuItems={items}/>
         </div>
     );
 }
 
-// <Content bc={buttonClicked}/>
 export default App;
